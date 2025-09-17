@@ -2,117 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Design Gallery</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1220;
-      color: #fff;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #06b6d4;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 16px;
-      padding: 20px;
-      max-width: 1400px;
-      margin: auto;
-    }
-    .gallery img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-    .lightbox.open {
-      display: flex;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 10px;
-    }
-    .lightbox span {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 32px;
-      cursor: pointer;
-      color: #fff;
-    }
-
-    /* Responsive */
-    @media (max-width: 1200px) {
-      .gallery {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    @media (max-width: 600px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Design Works - Abdul Ramiz</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Design Gallery</h1>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="brand">Abdul Ramiz A</div>
+    <nav class="nav">
+      <a href="index.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="designs.html" class="active">Design Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <div class="gallery">
-    <img src="assets/1.png" alt="1">
-    <img src="assets/2.png" alt="2">
-    <img src="assets/3.png" alt="3">
-    <img src="assets/4.png" alt="4">
-    <img src="assets/5.png" alt="5">
-    <img src="assets/6.png" alt="6">
-    <img src="assets/7.png" alt="7">
-    <img src="assets/8.png" alt="8">
-    <img src="assets/9.png" alt="9">
-    <img src="assets/10.png" alt="10">
-    <img src="assets/11.png" alt="11">
-    <img src="assets/12.png" alt="12">
-  </div>
+  <!-- Main Content -->
+  <main class="container">
+    <section class="card">
+      <h2>3D Design Gallery</h2>
+      <p class="muted">Hover to zoom. Click to view full-size.</p>
+
+      <!-- 12 images gallery -->
+      <div id="gallery" class="gallery">
+        <img src="assets/1.png" alt="Design Work 1">
+        <img src="assets/2.png" alt="Design Work 2">
+        <img src="assets/3.png" alt="Design Work 3">
+        <img src="assets/4.png" alt="Design Work 4">
+        <img src="assets/5.png" alt="Design Work 5">
+        <img src="assets/6.png" alt="Design Work 6">
+        <img src="assets/7.png" alt="Design Work 7">
+        <img src="assets/8.png" alt="Design Work 8">
+        <img src="assets/9.png" alt="Design Work 9">
+        <img src="assets/10.png" alt="Design Work 10">
+        <img src="assets/11.png" alt="Design Work 11">
+        <img src="assets/12.png" alt="Design Work 12">
+      </div>
+    </section>
+  </main>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
+  <div id="lightbox" class="lightbox" aria-hidden="true">
     <span id="closeBtn">&times;</span>
     <img id="lightboxImg" src="" alt="">
   </div>
 
+  <!-- Footer -->
+  <footer class="site-footer">© <span id="year4"></span> Abdul Ramiz A</footer>
+
+  <!-- Scripts -->
   <script>
-    const gallery = document.querySelectorAll(".gallery img");
+    // Footer year
+    document.getElementById('year4').textContent = new Date().getFullYear();
+
+    // Lightbox
+    const galleryImages = document.querySelectorAll("#gallery img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
     const closeBtn = document.getElementById("closeBtn");
 
-    gallery.forEach(img => {
+    galleryImages.forEach(img => {
       img.addEventListener("click", () => {
         lightbox.classList.add("open");
         lightboxImg.src = img.src;
