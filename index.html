@@ -7,12 +7,53 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Profile photo size */
+    /* Layout for about card */
+    .about-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;   /* space between image and text */
+    }
+
+    /* Profile photo in rectangle */
     .profile-photo {
-      width: 180px;       /* Adjust size here */
-      height: 180px;      /* Keeps it square */
-      object-fit: cover;  /* Prevents distortion */
-      border-radius: 50%; /* Makes it circular (optional) */
+      width: 200px;   /* change size as you like */
+      height: 250px;  /* rectangle shape */
+      object-fit: cover;
+      border-radius: 8px; /* small rounded corners */
+    }
+
+    /* Right side text */
+    .about-card .right {
+      flex: 1; /* take remaining space */
+    }
+
+    .about-card .right h1 {
+      margin: 0;
+    }
+
+    .about-card .right p {
+      line-height: 1.6;
+    }
+
+    /* Stylish download button */
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: linear-gradient(135deg, #43A047, #1B5E20);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -36,8 +77,13 @@
         <h1>Abdul Ramiz A</h1>
         <h2>Mechatronics / Design Engineer </h2>
         <p class="lead">
-            Aspiring Mechatronics Engineer seeking a role in the design field to apply knowledge of mechanical, electrical, and automation systems. Skilled in using CAD tools to develop efficient and innovative designs, with a strong commitment to problem-solving and contributing toorganizational success. Eager to learn, adapt, and grow while supporting cutting-edge design projects.
+            Aspiring Mechatronics Engineer seeking a role in the design field to apply knowledge of mechanical, electrical, and automation systems. Skilled in using CAD tools to develop efficient and innovative designs, with a strong commitment to problem-solving and contributing to organizational success. Eager to learn, adapt, and grow while supporting cutting-edge design projects.
         </p>
+
+        <!-- Download Button -->
+        <a href="assets/Abdul_Ramiz_Resume.pdf" class="download-btn" download>
+          ⬇ Download Resume
+        </a>
       </div>
     </section>
   </main>
