@@ -3,65 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ABDUL RAMIZ A — About</title>
+  <title>Projects - Abdul Ramiz</title>
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* Layout for about card */
-    .about-card {
-      display: flex;
-      align-items: center;
-      gap: 20px;   /* space between image and text */
-    }
-
-    /* Profile photo in rectangle */
-    .profile-photo {
-      width: 200px;   /* change size as you like */
-      height: 250px;  /* rectangle shape */
-      object-fit: cover;
-      border-radius: 8px; /* small rounded corners (remove if you want sharp) */
-    }
-
-    /* Right side text */
-    .about-card .right {
-      flex: 1; /* take remaining space */
-    }
-
-    .about-card .right h1 {
-      margin: 0;
-    }
-
-    .about-card .right p {
-      line-height: 1.6;
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="brand">ABDUL RAMIZ A </div>
+    <div class="brand">Abdul Ramiz A</div>
     <nav class="nav">
-      <a href="index.html" class="active">About</a>
-      <a href="projects.html">Projects</a>
+      <a href="index.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="achievements.html">Achievements</a>
       <a href="designs.html">Design Works</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
   <main class="container">
-    <section class="card about-card">
-      <div class="left">
-        <img src="assets/profile.jpg" alt="Profile photo" class="profile-photo">
-      </div>
-      <div class="right">
-        <h1>Abdul Ramiz A</h1>
-        <h2>Mechatronics / Design Engineer </h2>
-        <p class="lead">
-            Aspiring Mechatronics Engineer seeking a role in the design field to apply knowledge of mechanical, electrical, and automation systems. Skilled in using CAD tools to develop efficient and innovative designs, with a strong commitment to problem-solving and contributing to organizational success. Eager to learn, adapt, and grow while supporting cutting-edge design projects.
-        </p>
-      </div>
+    <section class="card">
+      <h2>Engineering Projects</h2>
+      <article class="project-card">
+        <img src="assets/color_sorter.png" alt="Color Sorter Machine" class="project-thumb">
+        <div class="proj-text">
+          <h3>Color Sorter Machine</h3>
+          <p>Built a conveyor-based system where materials are detected by a color sensor.
+            Integrated Arduino with TCS3200 color sensor and actuators for decision-making.
+            Used servo motors to separate objects into different bins depending on their color.
+            Implemented real-time processing to ensure high accuracy and speed.</p>
+        </div>
+      </article>
+      <article class="project-card">
+        <img src="assets/regenerative.png" alt="Regenerative Braking System" class="project-thumb">
+        <div class="proj-text">
+          <h3>Regenerative Braking System</h3>
+          <p>Designed for EVs, optimized with ML-based strategies to maximize energy recovery.Designed and implemented a regenerative braking system for electric vehicles to recover kinetic energy into battery storage.Improved vehicle range and energy efficiency through intelligent braking control strategies.</p>
+        </div>
+      </article>
     </section>
   </main>
-  <footer class="site-footer">© <span id="year"></span> Abdul Ramiz A</footer>
-  <script src="script.js"></script>
+  <footer class="site-footer">© <span id="year2"></span> Abdul Ramiz A</footer>
+  <script>document.getElementById('year2').textContent=new Date().getFullYear();</script>
 </body>
 </html>
